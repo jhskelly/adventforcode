@@ -33,8 +33,8 @@ func main() {
 }
 func parse(parse string) int {
 	r := regexp.MustCompile("mul\\(|don\\'t\\(\\)|do\\(\\)")
-	extract_value_regex := regexp.MustCompile("^mul\\((?P<left>[0-9]+),(?P<right>[0-9]+)\\)")
 	parsed_result := r.FindAllStringSubmatchIndex(parse, -1)
+	extract_value_regex := regexp.MustCompile("^mul\\((?P<left>[0-9]+),(?P<right>[0-9]+)\\)")
 	var take = true
 	total := 0
 	for i := 0; i < len(parsed_result); i++ {
